@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/clndr.css">
 </head>
 <body>
+    <p id="time"></p>
     <div class="container">
         <div class="cal1"></div>
         <div class="cal2">
@@ -67,5 +68,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="../src/clndr.js"></script>
     <script src="demo.js"></script>
+    <script type="text/javascript">
+    $.get('http://localhost:8108/shiftDetail',function(data){
+    //  console.log(data)
+      $("#time").text(data.employee.time)
+   });
+</script>
 </body>
 </html>
